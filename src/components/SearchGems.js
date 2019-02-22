@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import { Search } from './common';
 import axios from 'axios';
+import debounce from 'lodash/debounce';
+import { connect } from 'react-redux';
+
+import { Search } from './common';
+import { fetchGems } from '../actions/GemActions';
 
 const API_ENDPOINT = 'http://localhost:3000/api/v1/search.json?query=';
 
@@ -12,19 +16,13 @@ class SearchGems extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  getGems() {
-    const query = `${API_ENDPOINT}${this.state.text}`;
-    axios.get(query).then(res => {
-      console.log('here: ', res.data);
-    });
-  }
-
   handleChange(event) {
-    this.setState({ text: event.target.value })
+    this.setState({ text: event.target.value });
+    this.props.fetchGems(event.target.value);
   }
 
   handleSubmit() {
-    this.getGems();
+    this.props.fetchGems(this.state.text);
   }
 
   render() {
@@ -42,4 +40,4 @@ class SearchGems extends Component {
   }
 }
 
-export default SearchGems;
+export default connect(null, { fetchGems })(SearchGems);
