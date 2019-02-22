@@ -2,8 +2,20 @@ import React, { Component } from 'react';
 
 class Search extends Component {
   submit(event) {
-    event.preventDefault()
+    event.preventDefault();
     this.props.handleSubmit();
+  }
+
+  displayButton() {
+    const { hasCta, cta } = this.props;
+    if (hasCta) {
+      return (
+        <button type="submit" value="Submit" className="btn btn-success">
+          {this.props.cta || 'Submit'}
+        </button>
+      )
+    }
+    return <div />;
   }
 
   render() {
@@ -17,13 +29,7 @@ class Search extends Component {
             onChange={this.props.handleChange}
           />
         </div>
-        <button
-          type="submit"
-          value="Submit"
-          className="btn btn-success"
-        >
-          {this.props.cta || 'Submit'}
-        </button>
+        {this.displayButton()}
       </form>
     )
   }

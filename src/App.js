@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import SearchGems from './components/SearchGems';
+import DisplayGems from './components/DisplayGems';
+import Hero from './components/Hero';
+
 import './styles/App.scss';
 
 class App extends Component {
@@ -7,7 +9,8 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container-fluid">
-          <SearchGems />
+          <Hero />
+          <DisplayGems />
         </div>
       </div>
     )

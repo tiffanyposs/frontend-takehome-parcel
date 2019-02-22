@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import debounce from 'lodash/debounce';
 import { connect } from 'react-redux';
 
 import { Search } from './common';
 import { fetchGems } from '../actions/GemActions';
-
-const API_ENDPOINT = 'http://localhost:3000/api/v1/search.json?query=';
 
 class SearchGems extends Component {
   constructor(props) {
@@ -21,7 +17,7 @@ class SearchGems extends Component {
     this.props.fetchGems(event.target.value);
   }
 
-  handleSubmit() {
+  handleSubmit(event) {
     this.props.fetchGems(this.state.text);
   }
 
@@ -33,7 +29,7 @@ class SearchGems extends Component {
           handleSubmit={this.handleSubmit}
           value={this.state.text}
           placeholder={'Looking For Gems?'}
-          cta={'Search'}
+          hasCta={false}
         />
       </div>
     )

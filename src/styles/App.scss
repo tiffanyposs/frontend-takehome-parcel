@@ -1,3 +1,49 @@
-.App {
-  background-color: lightgrey;
+.Hero {
+  padding: 150px 0px;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  span.fa {
+    color: #EE134A;
+    font-size: 125px;
+    margin-bottom: 25px;
+  }
+
+  .SearchGems {
+    input {
+      font-size: 25px;
+      padding: 20px 30px;
+      min-width: 500px;
+    }
+  }
+}
+
+.GemTile {
+  .GemTile-card {
+    height: 300px;
+    margin-bottom: 30px;
+
+    .GemTile-info {
+      -webkit-line-clamp: 6;
+      overflow : hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+    }
+  }
+}
+
+.FakeGemTiles {
+  .FakeGemTiles-card {
+    height: 300px;
+    margin-bottom: 30px;
+    background-color: #ddd;
+
+    span.fa {
+      font-size: 100px;
+      color: #ccc;
+    }
+  }
 }
