@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class Search extends Component {
   submit(event) {
     event.preventDefault();
-    this.props.handleSubmit();
+    if (this.props.handleSubmit) {
+      this.props.handleSubmit();
+    }
   }
 
   displayButton() {

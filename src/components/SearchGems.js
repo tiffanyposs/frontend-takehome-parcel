@@ -9,7 +9,6 @@ class SearchGems extends Component {
     super(props);
     this.state = { text: '' };
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
@@ -17,16 +16,11 @@ class SearchGems extends Component {
     this.props.fetchGems(event.target.value);
   }
 
-  handleSubmit(event) {
-    this.props.fetchGems(this.state.text);
-  }
-
   render() {
     return (
       <div className="SearchGems">
         <Search
           handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
           value={this.state.text}
           placeholder={'Looking For Gems?'}
           hasCta={false}

@@ -5,10 +5,11 @@ const GemTile = props => {
   return (
     <div className="GemTile col-sm-4">
       <a className="GemTile-card card" href={props.data.project_uri} target="_blank">
+        <FontAwesome name="star" className="GemTile-star" />
         <div className="card-body d-flex flex-column justify-content-between">
           <div>
             <h4>
-              <FontAwesome name="diamond" />
+              <FontAwesome name="diamond" className="GemTile-gem" />
               <span className="ml-3">{props.data.name}</span>
             </h4>
             <p className="GemTile-info">{props.data.info}</p>
