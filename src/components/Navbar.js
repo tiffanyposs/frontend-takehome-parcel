@@ -3,7 +3,7 @@ import FontAwesome from 'react-fontawesome';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-const Navbar = (props) => {
+const Navbar = props => {
     const numberOfSavedGems = Object.keys(props.savedGems).length;
     return (
       <nav className="Navbar">

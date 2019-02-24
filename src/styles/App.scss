@@ -112,3 +112,15 @@ $darkgrey: #ccc;
     }
   }
 }
+
+.SavedGemPage {
+  .SavedGemPage-header {
+    padding: 150px 0px;
+    text-align: center;
+
+    span.fa {
+      color: $yellow;
+      font-size: 150px;
+    }
+  }
+}
