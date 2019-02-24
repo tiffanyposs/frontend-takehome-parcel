@@ -31,6 +31,7 @@ $darkgrey: #ccc;
     margin-bottom: 30px;
     position: relative;
     color: black;
+    cursor: pointer;
     transition: 0.5s border;
 
     &:hover {
@@ -50,6 +51,10 @@ $darkgrey: #ccc;
       color: $lightgrey;
       font-size: 22px;
       transition: 0.5s color;
+
+      &.GemTile-star-saved {
+        color: $yellow;
+      }
 
       &:hover {
         color: $yellow;
