@@ -3,6 +3,35 @@ $yellow: #fbd04a;
 $lightgrey: #ddd;
 $darkgrey: #ccc;
 
+.Navbar {
+  border-bottom: 1px solid $darkgrey;
+  padding: 30px 40px;
+  .Navbar-left {
+    span.fa {
+      color: $red;
+      font-size: 50px;
+    }
+  }
+  .Navbar-right {
+    .Navbar-star-container {
+      width: 50px;
+      height: 50px;
+
+      span.fa {
+        color: $yellow;
+        font-size: 40px;
+      }
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+  }
+}
+
 .Hero {
   padding: 150px 0px;
 
