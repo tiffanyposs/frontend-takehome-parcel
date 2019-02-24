@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { Search } from './common';
-import { fetchGems } from '../actions/GemActions';
+import { fetchGems, clearGems } from '../actions/GemActions';
 
 class SearchGems extends Component {
   constructor(props) {
     super(props);
     this.state = { text: '' };
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.props.clearGems();
   }
 
   handleChange(event) {
@@ -30,4 +34,4 @@ class SearchGems extends Component {
   }
 }
 
-export default connect(null, { fetchGems })(SearchGems);
+export default connect(null, { fetchGems, clearGems })(SearchGems);

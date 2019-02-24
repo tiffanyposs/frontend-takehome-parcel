@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { SEARCH_GEMS, SAVE_GEM } from './types';
+import { SEARCH_GEMS, CLEAR_GEMS, SAVE_GEM } from './types';
 import { API_ENDPOINT, LOCAL_STORAGE_KEY } from '../variables';
 
 export const fetchGems = (searchQuery) => {
@@ -12,6 +12,13 @@ export const fetchGems = (searchQuery) => {
         payload: res.data
       });
     });
+  }
+}
+
+export const clearGems = () => {
+  return {
+    type: CLEAR_GEMS,
+    payload: []
   }
 }
 
