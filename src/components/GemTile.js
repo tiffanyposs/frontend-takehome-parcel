@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
+import NumberFormat from 'react-number-format';
 import { connect } from 'react-redux';
 import { saveGem } from '../actions/GemActions';
 
@@ -24,7 +25,7 @@ class GemTile extends Component {
   render() {
     const { data, savedGems } = this.props;
     const { name } = data;
-    const isSavedClass = !!savedGems[name] ? 'GemTile-star-saved' : '';
+    const isSavedClass = savedGems && !!savedGems[name] ? 'GemTile-star-saved' : '';
 
     return (
       <div className="GemTile col-sm-4">
@@ -45,7 +46,13 @@ class GemTile extends Component {
               </p>
               <p>
                 <FontAwesome name="download"/>
-                <span className="ml-2">{data.downloads}</span>
+                <span className="ml-2">
+                  <NumberFormat
+                    value={data.downloads}
+                    displayType={'text'}
+                    thousandSeparator={true}
+                  />
+                </span>
               </p>
             </div>
           </div>

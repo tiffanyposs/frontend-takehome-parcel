@@ -18,8 +18,16 @@ export const fetchGems = (searchQuery) => {
 export const saveGem = (gemData) => {
   const { name } = gemData;
   let savedGems = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-  savedGems = savedGems ? { ...savedGems, [name]: gemData } : { [name]: gemData }
+
+  // if it already exists in storage, delete it
+  if (savedGems && savedGems[name]) {
+    delete savedGems[name];
+  } else {
+    savedGems = savedGems ? { ...savedGems, [name]: gemData } : { [name]: gemData }
+  }
+
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(savedGems));
+
   return {
     type: SAVE_GEM,
     payload: savedGems

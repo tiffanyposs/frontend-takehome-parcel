@@ -20,7 +20,7 @@ const DisplayGems = props => {
 }
 
 function mapStateToProps(state) {
-  return { gems: state.gems.data }
+  return { gems: state.gems.queryData }
 }
 
 export default connect(mapStateToProps, null)(DisplayGems);
