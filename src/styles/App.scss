@@ -1,3 +1,37 @@
+$red: #EE134A;
+$yellow: #fbd04a;
+$lightgrey: #ddd;
+$darkgrey: #ccc;
+
+.Navbar {
+  border-bottom: 1px solid $darkgrey;
+  padding: 30px 40px;
+  .Navbar-left {
+    span.fa {
+      color: $red;
+      font-size: 50px;
+    }
+  }
+  .Navbar-right {
+    .Navbar-star-container {
+      width: 50px;
+      height: 50px;
+
+      span.fa {
+        color: $yellow;
+        font-size: 40px;
+      }
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+  }
+}
+
 .Hero {
   padding: 150px 0px;
 
@@ -6,17 +40,17 @@
   }
 
   span.fa {
-    color: #EE134A;
+    color: $red;
     font-size: 125px;
     margin-bottom: 25px;
   }
+}
 
-  .SearchGems {
-    input {
-      font-size: 25px;
-      padding: 20px 30px;
-      min-width: 500px;
-    }
+.SearchGems {
+  input {
+    font-size: 25px;
+    padding: 20px 30px;
+    min-width: 500px;
   }
 }
 
@@ -24,6 +58,37 @@
   .GemTile-card {
     height: 300px;
     margin-bottom: 30px;
+    position: relative;
+    color: black;
+    cursor: pointer;
+    transition: 0.5s border;
+
+    &:hover {
+      text-decoration: none;
+      border: 1px solid rgba(0,0,0,.5);
+    }
+
+    .GemTile-gem {
+      color: $red;
+      font-size: 22px;
+    }
+
+    .GemTile-star {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      color: $lightgrey;
+      font-size: 22px;
+      transition: 0.5s color;
+
+      &.GemTile-star-saved {
+        color: $yellow;
+      }
+
+      &:hover {
+        color: $yellow;
+      }
+    }
 
     .GemTile-info {
       -webkit-line-clamp: 6;
@@ -39,11 +104,23 @@
   .FakeGemTiles-card {
     height: 300px;
     margin-bottom: 30px;
-    background-color: #ddd;
+    background-color: $lightgrey;
 
     span.fa {
       font-size: 100px;
-      color: #ccc;
+      color: $darkgrey;
+    }
+  }
+}
+
+.SavedGemPage {
+  .SavedGemPage-header {
+    padding: 150px 0px;
+    text-align: center;
+
+    span.fa {
+      color: $yellow;
+      font-size: 150px;
     }
   }
 }

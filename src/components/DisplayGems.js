@@ -12,7 +12,7 @@ const DisplayGems = props => {
     <div className="DisplayGems">
       <div className="row">
         {props.gems.map((data) => {
-          return <GemTile key={data.name} data={data}/>
+          return <GemTile key={data.name} data={data} />
         })}
       </div>
     </div>
@@ -20,7 +20,7 @@ const DisplayGems = props => {
 }
 
 function mapStateToProps(state) {
-  return { gems: state.gems.data }
+  return { gems: state.gems.queryData }
 }
 
 export default connect(mapStateToProps, null)(DisplayGems);
