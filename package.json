@@ -7,7 +7,12 @@
     "build": "./node_modules/.bin/parcel build ./index.html",
     "dev": "concurrently './node_modules/.bin/parcel ./index.html' 'node ./server'",
     "start": "NODE_ENV=production node ./server",
-    "test": "echo 'Your test command goes here'"
+    "test": "jest"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "repository": {
     "type": "git",
@@ -35,10 +40,20 @@
     "request": "^2.88.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
     "babel-core": "^6.26.3",
+    "babel-jest": "^24.1.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "enzyme-to-json": "^3.3.5",
+    "jest": "^24.1.0",
+    "moxios": "^0.4.0",
+    "redux-mock-store": "^1.5.3",
     "sass": "^1.17.0"
   }
 }

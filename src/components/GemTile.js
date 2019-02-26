@@ -35,18 +35,18 @@ class GemTile extends Component {
             <div>
               <h4>
                 <FontAwesome name="diamond" className="GemTile-gem" />
-                <span className="ml-3">{data.name}</span>
+                <span className="GemTile-name ml-3">{data.name}</span>
               </h4>
               <p className="GemTile-info">{data.info}</p>
             </div>
             <div className="d-flex flex-row justify-content-between">
               <p>
                 <FontAwesome name="pencil"/>
-                <span className="ml-2">{data.authors}</span>
+                <span className="GemTile-authors ml-2">{data.authors}</span>
               </p>
               <p>
                 <FontAwesome name="download"/>
-                <span className="ml-2">
+                <span className="GemTile-downloads ml-2">
                   <NumberFormat
                     value={data.downloads}
                     displayType={'text'}
