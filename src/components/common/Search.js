@@ -22,10 +22,10 @@ class Search extends Component {
 
   render() {
     return (
-      <form className="form-inline flex-row justify-content-center" onSubmit={this.submit.bind(this)}>
+      <form className="Search form-inline flex-row justify-content-center" onSubmit={this.submit.bind(this)}>
         <div className="form-group">
           <input
-            className="form-control"
+            className="Search-input form-control"
             value={this.props.value}
             placeholder={this.props.placeholder || ''}
             onChange={this.props.handleChange}

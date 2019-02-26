@@ -4,7 +4,7 @@ import Hero from '../Hero';
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="HomePage">
       <Hero />
       <DisplayGems />
     </div>

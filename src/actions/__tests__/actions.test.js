@@ -1,4 +1,3 @@
-import moxios from 'moxios';
 import { saveGem, clearGems } from '../GemActions';
 import { SAVE_GEM, CLEAR_GEMS } from '../types';
 

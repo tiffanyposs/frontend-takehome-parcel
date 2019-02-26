@@ -10,7 +10,15 @@ configure({ adapter: new Adapter() });
 
 const mockStore = configureStore();
 
-let store = mockStore({ gems: { queryData: [ { name: 'parse' }, { name: 'parse2' } ] } });
+let store = mockStore({
+  gems: {
+    queryData: [
+      { name: 'parse' },
+      { name: 'parse2' }
+    ]
+  }
+});
+
 let wrapper = mount(<Provider store={store}><DisplayGems/></Provider>);
 
 it('renders', () => {

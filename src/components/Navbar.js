@@ -17,7 +17,7 @@ const Navbar = props => {
             <Link className="d-flex align-items-center" to="/saved">
               <span className="Navbar-star-container position-relative d-flex justify-content-center align-items-center">
                 <FontAwesome className="position-absolute mr-2" name="star" />
-                <span className="position-absolute">{numberOfSavedGems}</span>
+                <span className="Navbar-saved-gems position-absolute">{numberOfSavedGems}</span>
               </span>
               <span>Saved Gems</span>
             </Link>
